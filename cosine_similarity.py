@@ -4,7 +4,10 @@ import copy
 from collections import Counter
 from scipy import spatial
 from sklearn import metrics 
+import plot_results as plt
+import sys
 
+recipe_to_look = sys.argv[1]
 cosine_similarity_threshold = 0.2
 
 # Flattens an array
@@ -16,27 +19,14 @@ def flat(arr):
 # values into an array of properties
 #
 def get_recipe_attributes(recipe):
-  l = map(lambda x: x.split(','), [
-    recipe['calories'], 
-    recipe['protein'], 
-    recipe['fat'], 
-    recipe['sodium']
-  ])
-  return flat(l)
-
-#
-# Create a dictionary of attributes
-#
-def dictionary(arr):
-  arr = numpy.unique(flat(arr))
-  count = 0
-  d = {} #Empty dictionary to add values into
-
-  for i in arr:
-    d[i] = count
-    count+=1
-
-  return d
+  # keys = filter(lambda key: key != 'title' and key != 'rating', recipe.keys())
+  # return map(lambda x: recipe[x] or 0, keys)
+  return [
+    recipe['fat'] or 0,
+    recipe['protein'] or 0,
+    recipe['calories'] or 0,
+    recipe['sodium'] or 0
+  ]
 
 
 def buildVector(iterable1, iterable2):
@@ -56,24 +46,22 @@ def map_attrs_to_ints(recipe, dict):
 
 with open('epi_r.csv') as tsvfile:
   reader = csv.DictReader(tsvfile, delimiter=',')
-  filtered = filter(lambda p: p, reader)
+  filtered = filter(lambda p: p, reader)[0:200]
+  recipe_to_look = filter(lambda p: p['title'] == recipe_to_look, filtered)[0]
 
-  r = []
+  attrs = map(lambda x: float(x), get_recipe_attributes(recipe_to_look))
 
-  for row1 in filtered:
-    r.append(get_recipe_attributes(row1))
+  similar_recipes = []
+  for rec2 in filtered:
+    attrs2 = map(lambda x: float(x), get_recipe_attributes(rec2))
+    [attrs, attrs2] = buildVector(attrs, attrs2)
+    print(attrs, attrs2)
+    cosine_similarity = 1 - spatial.distance.cosine(attrs, attrs2)
 
-  dict = dictionary(r)
+    if(cosine_similarity > cosine_similarity_threshold and recipe_to_look['title'] != rec2['title']):
+      rec2['cosine_similarity'] = cosine_similarity
+      similar_recipes.append(rec2)
 
-  for rec1 in filtered:
-    attrs1 = map_attrs_to_ints(rec1, dict)
-    similar_recipes = []
-    for rec2 in filtered:
-      attrs2 = map_attrs_to_ints(rec2, dict)
-      [attrs1, attrs2] = buildVector(attrs1, attrs2)
-      cosine_similarity = 1 - spatial.distance.cosine(attrs1, attrs2)
+  similar_recipes = sorted(similar_recipes, key=lambda x: x['cosine_similarity'])
 
-      if(cosine_similarity > cosine_similarity_threshold and rec1['title'] != rec2['title']):
-        copyRec = copy.deepcopy(rec2)
-        copyRec['cosine_similarity'] = cosine_similarity
-        similar_recipes.append(copyRec)
+  plt.draw(similar_recipes, 'cosine_similarity', recipe_to_look['title'])
