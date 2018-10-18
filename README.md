@@ -19,16 +19,12 @@ user provides, either explicitly (rating) or implicitly (clicking
 on a link). [Comparing Content Based and Collaborative
 Filtering in Recommender Systems](https://www.ijntr.org/download_data/IJNTR03040022.pdf)
 
-In our data we have many attributes that describe a recipe, for simplicity I picked 4 of these, `fat`, `sodium` `protein` and `calories`
+In our data we have many attributes that describe a recipe, we use all of them except `title` and `rating`
 
 ```py
 def get_recipe_attributes(recipe):
-  return [
-    recipe['fat'] or 0,
-    recipe['protein'] or 0,
-    recipe['calories'] or 0,
-    recipe['sodium'] or 0
-  ]
+  keys = filter(lambda key: key != 'title' and key != 'rating', recipe.keys())
+  return map(lambda x: recipe[x] or 0, keys)
 ```
 
 This returns a vector that we are using to caclulate the similarity between two recipes. To calculate the similarity we can use various similarity metrics, for example *Cosine Similarity*.
@@ -36,12 +32,11 @@ This returns a vector that we are using to caclulate the similarity between two 
 ```bash
 python cbf_cosine_similarity.py 'Garlic Baguette Crumbs '
 ```
+![alt text](https://raw.githubusercontent.com/AvraamMavridis/recipe-recommendation-engine/master/figures/cbf_cosine_similarity.png "Recipes Cosine")
 
 ## Cosine Similarity
 
 ![alt text](https://wikimedia.org/api/rest_v1/media/math/render/svg/1d94e5903f7936d3c131e040ef2c51b473dd071d "Cosine")
-
-
 
 
 #### When to Use Cosine?
