@@ -11,7 +11,7 @@ def draw(recipes, similarity_metric, title):
     plt.bar(index, similarities)
     plt.xlabel('Similar Recipes', fontsize=15)
     plt.ylabel('Similarity', fontsize=15)
-    plt.ylim(0, max(similarities) + 0.1)
+    plt.ylim(min(similarities), max(similarities) + 0.1)
     plt.xticks(index, names, fontsize=7, rotation=90)
     plt.title(title)
     plt.subplots_adjust(bottom=0.28, left=0.1, right=0.98)
