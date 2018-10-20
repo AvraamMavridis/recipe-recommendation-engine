@@ -26,8 +26,7 @@ Unlike with the physical stores, internet companies do not have to care about sh
 
 ###### Refererences on the paradox of choice
 
-- [Barry Schwartz  - https://www.ted.com/talks/barry_schwartz_on_the_paradox_of_choice?language=en
-](The paradox of choice)
+- [Barry Schwartz  - The paradox of choice](https://www.ted.com/talks/barry_schwartz_on_the_paradox_of_choice?language=en)
 
 
 ## Content-based filtering
