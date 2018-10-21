@@ -43,7 +43,11 @@ even to clinical depression.”_
 
 ## Recommender Systems
 
-With the term `recommender system` we are referring to a system that's capable of predicting the preference a user for a set of available items. 
+So from one hand we have the long tail phenomenon, and the goal of companies to offer more and more products, from the other hand we have the Paradox of Choice, the customers try to find the best possible choice that will bring them joy and satisfaction.
+
+The goal of a Recommender Systems, should be exactly this, to help the customer to discover the best possible option for their needs. With the term `recommender system` we are referring to a system that's capable of predicting the preference of a user for a set of available items. 
+
+There are two main approaches on Recommender systems, `collaborative filtering` and `content-based filtering`. `Collaborative filtering` builds a model based on user's past interaction/behavior as well as similar decisions made by other users. Content-based filtering uses characteristics of an item in order to recommend items with similar characteristics. These approaches are often combined (Hybrid Recommender Systems).
 
 
 ### Content-based filtering
