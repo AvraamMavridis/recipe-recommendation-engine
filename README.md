@@ -74,6 +74,36 @@ The mathimatical representation of it:
 
 <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/eaef5aa86949f49e7dc6b9c8c3dd8b233332c9e7" />
 
+To calculate the Jaccard Similarity we can take two approaches, either we can calculate the union and the intersection of the recipes they have tried ignoring their rating, or we can take the union of the recipes they rate exactly the same and the intersection of the recipes where they gave different rating.
+
+For the 1st case, to calculuate the Jaccard Similarity between two users, we need to do some preprocessing, if a user has rate a recipe, means they try it, so we assigned `1`, otherwise we append `0` to our normalized vector.
+
+```python
+def normalize_vector(attrs):
+  vector = []
+  for val in attrs:
+    if val == '0':
+      vector.append(0)
+    else:
+      vector.append(1)
+  return vector
+```
+
+e.g. `[0,4,5,1,0,3] -> [0,1,1,1,0,1]`
+
+We can call the script passing the user for whom we want to find similar users.
+
+```cmd
+python clf_jaccard_normalized.py "Michael Grant"
+```
+
+This will give us:
+
+<img src="https://github.com/AvraamMavridis/recipe-recommendation-engine/blob/master/figures/jaccard_1.png?raw=true" />
+
+So, `Scott Lane` is the user that is most similar to `Michael Grant`, so we can recommend to `Michael` the recipes that `Scott` have tried, but he hasn't. There is a problem though, if we look carefully the data we will see that these 2 users, although they tried the same recipes, they have completely different taste, whatever `Michael` rated as 5 or 4, `Scott` rated it as 1, and the other way around.
+
+<img src="https://github.com/AvraamMavridis/recipe-recommendation-engine/blob/master/figures/michael_scott.png?raw=true" />
 
 ### Content-based filtering
 
