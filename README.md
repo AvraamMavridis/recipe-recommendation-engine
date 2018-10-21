@@ -101,9 +101,20 @@ This will give us:
 
 <img src="https://github.com/AvraamMavridis/recipe-recommendation-engine/blob/master/figures/jaccard_1.png?raw=true" />
 
-So, `Scott Lane` is the user that is most similar to `Michael Grant`, so we can recommend to `Michael` the recipes that `Scott` have tried, but he hasn't. There is a problem though, if we look carefully the data we will see that these 2 users, although they tried the same recipes, they have completely different taste, whatever `Michael` rated as 5 or 4, `Scott` rated it as 1, and the other way around.
+So, `Scott Lane` is the user that is most similar to `Michael Grant`, we can recommend to `Michael` the recipes that `Scott` have tried, but he hasn't. There is a problem though, if we look carefully the data we will see that these 2 users, although they tried the same recipes, they have completely different taste, whatever `Michael` rated as 5 or 4, `Scott` rated it as 1, and the other way around.
 
 <img src="https://github.com/AvraamMavridis/recipe-recommendation-engine/blob/master/figures/michael_scott.png?raw=true" />
+
+We can shift our model, and take only the union of the recipes that users rated exactly the same:
+
+```cmd
+python clf_jaccard_non_normalized.py "Michael Grant"
+```
+
+This will give us:
+
+<img src="https://github.com/AvraamMavridis/recipe-recommendation-engine/blob/master/figures/jaccard_2.png?raw=true" />
+
 
 ### Content-based filtering
 
