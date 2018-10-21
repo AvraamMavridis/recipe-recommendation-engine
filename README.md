@@ -2,7 +2,45 @@
 
 In this repo I am exploring the field of Recommendation Systems by building recommendation engines for Recipes based on different attributes and similarity metrics
 
-## Content-based filtering
+# Intro
+
+## The `Long Tail` Phenomenon
+
+In retail there is a well know phenomenon called `Long Tail`, 80% of the customers tend to buy 20% of the possible products, this leads to physicall stores to prefer having only these 20% popular products on the shelf. It's called long-tail distribiution because the most popular items are at the thickest end and the many not-so-popular ones stretching the tail out to its length. The items in the long tail are rare, obscure items, they are not very popular. 
+
+Unlike with the physical stores, internet companies do not have to care about shelf space, they can offer millions of products. The problem is on how to present these niche products to the customer. Helping the user's discover these items in the long tail can return huge income to the vendors, so effective discovery is very critical.
+
+
+![alt text](https://github.com/AvraamMavridis/recipe-recommendation-engine/blob/master/figures/long_tail_problem.jpg?raw=true "Long Tail")
+
+
+###### Refererences on long tail problem
+
+- [Managing the "Long Tail" problem in Distribution and Retail
+](https://www.youtube.com/watch?v=j58ML1TVSKw)
+- [Long Tail - Wikipedia](https://en.wikipedia.org/wiki/Long_tail)
+
+## The `Paradox of Choice`
+
+In 2004, American psychologist Barry Schwartz, released a book called `The Paradox of Choice`, Barry in his book argues that having many options to choose from, in any particular situation, instead of producing feelings of abundance, too much choice overwhelms our already-exhausted brains.
+
+_“The fact that some choice is good doesn’t necessarily mean that more choice is
+better. As I will demonstrate, there is a cost to having an overload of choice. As a
+culture, we are enamored of freedom, self-determination, and variety, and we are
+reluctant to give up any of our options. But clinging tenaciously to all the choices
+available to us contributes to bad decisions, to anxiety, stress, and dissatisfaction—
+even to clinical depression.”_
+
+###### Refererences on the paradox of choice
+
+- [Barry Schwartz  - The paradox of choice](https://www.ted.com/talks/barry_schwartz_on_the_paradox_of_choice?language=en)
+
+## Recommender Systems
+
+With the term `recommender system` we are referring to a system that's capable of predicting the preference a user for a set of available items. 
+
+
+### Content-based filtering
 
 >Content-based filtering methods are based on a description of the item and a profile of the user’s preferences. In a content-based recommender system, keywords are used to describe the items and a user profile is built to indicate the type of item this user likes. In other words, these algorithms try to recommend items that are similar to those that a user liked in the past (or is examining in the present). [Wikipedia](https://en.wikipedia.org/wiki/Recommender_system)
 
