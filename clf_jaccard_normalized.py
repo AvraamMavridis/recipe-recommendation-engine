@@ -8,7 +8,6 @@ import helpers
 user = sys.argv[1]
 
 def normalize_vector(attrs):
-  print attrs
   vector = []
   for val in attrs:
     if val == '0':
