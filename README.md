@@ -50,6 +50,15 @@ The goal of a Recommender Systems, should be exactly this, to help the customer 
 There are two main approaches on Recommender systems, `collaborative filtering` and `content-based filtering`. `Collaborative filtering` builds a model based on user's past interaction/behavior as well as similar decisions made by other users. Content-based filtering uses characteristics of an item in order to recommend items with similar characteristics. These approaches are often combined (Hybrid Recommender Systems).
 
 
+### Collaborative filtering
+
+>Collaborative filtering methods are based on collecting and analyzing a large amount of information on users’ behaviors, activities or preferences and predicting what users will like based on their similarity to other users. A key advantage of the collaborative filtering approach is that it does not rely on machine analyzable content and therefore it is capable of accurately recommending complex items such as movies without requiring an "understanding" of the item itself. 
+
+For my examples, I will use a [csv file](https://github.com/AvraamMavridis/recipe-recommendation-engine/blob/master/user_ratings.csv) that has 30 users and and their ratings on 30 recipes. The ratings are on a `1 to 5` scale, while `0` means that the user haven't try the recipe.
+
+<img src="https://github.com/AvraamMavridis/recipe-recommendation-engine/blob/master/figures/csv_users.png" />
+
+
 ### Content-based filtering
 
 >Content-based filtering methods are based on a description of the item and a profile of the user’s preferences. In a content-based recommender system, keywords are used to describe the items and a user profile is built to indicate the type of item this user likes. In other words, these algorithms try to recommend items that are similar to those that a user liked in the past (or is examining in the present). [Wikipedia](https://en.wikipedia.org/wiki/Recommender_system)
