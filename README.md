@@ -24,12 +24,17 @@ Unlike with the physical stores, internet companies do not have to care about sh
 
 In 2004, American psychologist Barry Schwartz, released a book called `The Paradox of Choice`, Barry in his book argues that having many options to choose from, in any particular situation, instead of producing feelings of abundance, too much choice overwhelms our already-exhausted brains.
 
+<img src="https://github.com/AvraamMavridis/recipe-recommendation-engine/blob/master/figures/paradox_of_choice.jpg?raw=true" height="350" />
+
 _“The fact that some choice is good doesn’t necessarily mean that more choice is
 better. As I will demonstrate, there is a cost to having an overload of choice. As a
 culture, we are enamored of freedom, self-determination, and variety, and we are
 reluctant to give up any of our options. But clinging tenaciously to all the choices
 available to us contributes to bad decisions, to anxiety, stress, and dissatisfaction—
 even to clinical depression.”_
+
+<img src="https://github.com/AvraamMavridis/recipe-recommendation-engine/blob/master/figures/paradox_cartoon.gif?raw=true" height="250" />
+
 
 ###### Refererences on the paradox of choice
 
