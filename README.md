@@ -39,6 +39,7 @@ even to clinical depression.”_
 ###### Refererences on the paradox of choice
 
 - [Barry Schwartz  - The paradox of choice](https://www.ted.com/talks/barry_schwartz_on_the_paradox_of_choice?language=en)
+- [Why too many choices is stressing us out? - Guardian](https://www.theguardian.com/lifeandstyle/2015/oct/21/choice-stressing-us-out-dating-partners-monopolies)
 
 ## Recommender Systems
 
