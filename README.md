@@ -59,6 +59,22 @@ For my examples, I will use a [csv file](https://github.com/AvraamMavridis/recip
 <img src="https://github.com/AvraamMavridis/recipe-recommendation-engine/blob/master/figures/csv_users.png" />
 
 
+#### Jaccard Similarity Coefficient
+
+>The Jaccard coefficient measures similarity between finite sample sets, and is defined as the size of the intersection divided by the size of the union 
+
+`Jaccard Index = (the number in both sets) / (the number in either set)`
+
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Intersection_of_sets_A_and_B.svg/400px-Intersection_of_sets_A_and_B.svg.png" height="100" />
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Union_of_sets_A_and_B.svg/400px-Union_of_sets_A_and_B.svg.png" height="100" />
+
+The mathimatical representation of it:
+
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/eaef5aa86949f49e7dc6b9c8c3dd8b233332c9e7" />
+
+
 ### Content-based filtering
 
 >Content-based filtering methods are based on a description of the item and a profile of the user’s preferences. In a content-based recommender system, keywords are used to describe the items and a user profile is built to indicate the type of item this user likes. In other words, these algorithms try to recommend items that are similar to those that a user liked in the past (or is examining in the present). [Wikipedia](https://en.wikipedia.org/wiki/Recommender_system)
